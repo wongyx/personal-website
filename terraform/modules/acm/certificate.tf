@@ -11,12 +11,12 @@ terraform {
   }
 }
 
-resource "aws_acm_certificate" "resume" {
+resource "aws_acm_certificate" "website" {
   domain_name       = var.domain_name
   validation_method = "DNS"
 
   tags = {
-    Name        = "Resume Website Certificate"
+    Name        = "website Website Certificate"
   }
 
   lifecycle {

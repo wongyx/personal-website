@@ -1,7 +1,7 @@
 # Automatically create DNS validation records in Cloudflare
 resource "cloudflare_record" "cert_validation" {
   for_each = {
-    for dvo in aws_acm_certificate.resume.domain_validation_options : dvo.domain_name => {
+    for dvo in aws_acm_certificate.website.domain_validation_options : dvo.domain_name => {
       name  = dvo.resource_record_name
       value = dvo.resource_record_value
       type  = dvo.resource_record_type
@@ -19,8 +19,8 @@ resource "cloudflare_record" "cert_validation" {
 }
 
 # Wait for certificate validation to complete
-resource "aws_acm_certificate_validation" "resume" {
-  certificate_arn         = aws_acm_certificate.resume.arn
+resource "aws_acm_certificate_validation" "website" {
+  certificate_arn         = aws_acm_certificate.website.arn
   validation_record_fqdns = [for record in cloudflare_record.cert_validation : record.hostname]
 
   timeouts {

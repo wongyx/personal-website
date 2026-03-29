@@ -12,7 +12,7 @@ data "cloudflare_zone" "this" {
 }
 
 # DNS records for CloudFront
-resource "cloudflare_record" "resume" {
+resource "cloudflare_record" "website" {
   zone_id = var.cloudflare_zone_id
   name    = var.record_name
   content   = var.cloudfront_domain_name
