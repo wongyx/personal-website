@@ -49,7 +49,7 @@ resource "aws_iam_policy" "github_actions" {
           "s3:PutObject",
           "s3:GetObject"
         ]
-        Resource = var.s3_bucket_arn
+        Resource = "${var.s3_bucket_arn}/*"
       },
       {
         Effect = "Allow"
