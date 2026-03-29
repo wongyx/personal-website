@@ -44,3 +44,8 @@ variable "cloudflare_proxied" {
   type        = bool
   default     = false
 }
+
+variable "github_repo_name" {
+  description = "Name of repo on github for Cloud Resume Challenge"
+  type        = string
+}
