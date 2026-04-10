@@ -309,7 +309,7 @@ footer p {
     padding: 24px; gap: 20px;
     border-bottom: 1px solid var(--border);
   }
-  .hamburger { display: flex; }
+  .hamburger { display: none; }
   .projects-grid { grid-template-columns: 1fr; }
   .hero { padding: 100px 0 60px; }
   .section { padding: 72px 0; }
