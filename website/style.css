@@ -4,7 +4,7 @@
   --bg-card: #171f2e;
   --bg-card-hover: #1d2740;
   --green: #34d399;
-  --green-dim: #34d39918;
+  --green-dark: #10b981;
   --teal: #2dd4bf;
   --sky: #38bdf8;
   --violet: #a78bfa;
@@ -245,7 +245,7 @@ nav .container {
 }
 .status-live { background: rgba(52,211,153,0.1); color: var(--green); }
 .status-progress { background: rgba(251,191,36,0.1); color: var(--amber); }
-.status-temp { background: rgba(167,139,250,0.1); color: var(--violet); }
+.status-completed { background: rgba(16,185,129,0.1); color: var(--green-dark); }
 
 .project-emoji { font-size: 1.5rem; }
 
