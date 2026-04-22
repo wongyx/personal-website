@@ -31,7 +31,7 @@ provider "cloudflare" {
 
 module "acm" {
   count  = var.domain_name != "" ? 1 : 0
-  source = "../modules/acm"
+  source = "./modules/acm"
   
   providers = {
     aws        = aws.us_east_1  # ACM in us-east-1
@@ -43,7 +43,7 @@ module "acm" {
 }
 
 module "frontend" {
-  source = "../modules/frontend"
+  source = "./modules/frontend"
   
   bucket_name = var.bucket_name
   domain_name = var.domain_name
@@ -54,7 +54,7 @@ module "frontend" {
 
 module "dns" {
   count  = var.domain_name != "" ? 1 : 0
-  source = "../modules/dns"
+  source = "./modules/dns"
   
   cloudflare_zone_id      = var.cloudflare_zone_id
   record_name             = var.dns_record_name
@@ -63,7 +63,7 @@ module "dns" {
 }
 
 module "iam" {
-  source = "../modules/iam"
+  source = "./modules/iam"
   
   s3_bucket_arn    = module.frontend.bucket_arn
   cloudfront_distribution_arn   = module.frontend.cloudfront_distribution_arn
